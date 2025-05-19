@@ -1,4 +1,4 @@
-name: Create Vercel Preview URL on Pull Request
+name: Create vercel preview URL on pull request
 on:
   pull_request:
     branches: [main, master]
@@ -12,8 +12,8 @@ jobs:
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          vercel-org-id: ${{ secrets.ORG_ID }}
-          vercel-project-id: ${{ secrets.PROJECT_ID }}
-      - name: Preview URL
+          vercel-org-id: ${{ secrets.ORG_ID}}
+          vercel-project-id: ${{ secrets.PROJECT_ID}}
+      - name: preview-url
         run: |
           echo ${{ steps.vercel-deploy.outputs.preview-url }}
